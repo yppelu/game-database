@@ -1,5 +1,3 @@
-@use "@/scss-global/colors.scss" as colors;
-
 *,
 *::before,
 *::after {
@@ -57,9 +55,14 @@ h6 {
   overflow-wrap: break-word;
 }
 
+:root {
+  --background-primary-color: #151515;
+  --font-primary-color: #ffffff;
+}
+
 body {
-  background-color: colors.$background-primary-color;
-  color: colors.$font-primary-color;
+  background-color: var(--background-primary-color);
+  color: var(--font-primary-color);
   font-family:
     system-ui,
     -apple-system,

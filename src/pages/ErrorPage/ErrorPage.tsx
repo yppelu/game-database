@@ -1,4 +1,4 @@
-import classes from "@/pages/ErrorPage/ErrorPage.module.scss";
+import classes from "@/pages/ErrorPage/ErrorPage.module.css";
 import { Link } from "react-router-dom";
 
 function ErrorPage() {
