@@ -1,0 +1,67 @@
+.background-image {
+  background-image: url("/images/error-page-background-image-mobile.jpg");
+  background-position: bottom left;
+  background-size: cover;
+  filter: opacity(0.5);
+
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  min-height: calc(100vh - 2rem);
+  width: fit-content;
+}
+
+.heading {
+  font-size: 8rem;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.link {
+  background-color: #ffffff;
+  box-shadow: 0 0 1rem -0.5rem #ffffff;
+  color: #000000;
+  font-size: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 0.25rem;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 601px) {
+  .background-image {
+    background-image: url("/images/error-page-background-image-desktop.jpg");
+  }
+
+  .main {
+    transform: translateX(30%);
+    margin: 0;
+  }
+}
+
+@media (hover: hover) {
+  .link:hover {
+    background-color: #cfcfcf;
+    transition: background-color 0.15s ease-in-out;
+  }
+}
