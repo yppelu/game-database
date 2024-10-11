@@ -1,0 +1,5 @@
+@mixin plain-link-focus {
+  box-shadow: 0 0 0 2px #000000;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}

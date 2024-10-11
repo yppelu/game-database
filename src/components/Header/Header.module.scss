@@ -1,4 +1,5 @@
 @use "@/scss-global/variables.scss";
+@use "@/scss-global/mixins.scss";
 
 $header-height: 3rem;
 $header-font-size: 1.5rem;
@@ -23,7 +24,12 @@ $header-font-size: 1.5rem;
   align-items: center;
   gap: 0.5rem;
 
+  border-radius: variables.$border-radius;
   height: 100%;
+}
+
+.home-link:focus-visible {
+  @include mixins.plain-link-focus;
 }
 
 .logo {
