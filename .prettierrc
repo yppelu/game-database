@@ -1,4 +1,12 @@
 {
+  "overrides": [
+    {
+      "files": "*.svg",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ],
   "quoteProps": "consistent",
   "trailingComma": "none"
 }
