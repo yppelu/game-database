@@ -14,7 +14,7 @@ function WhiteLink({ href, isForeign, img, text }: WhiteLinkProps) {
           className={classes["link-icon"]}
           src={img.src}
           alt={img.alt}
-          aria-hidden
+          aria-hidden={Boolean(text)}
         />
       )}
       {text}
