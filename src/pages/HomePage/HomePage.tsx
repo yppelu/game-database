@@ -56,6 +56,8 @@ const navItems: CustomLinkProps[] = [
 ];
 
 function HomePage() {
+  document.title = "Home | Game Database";
+
   return (
     <>
       <main className={classes.main}>
