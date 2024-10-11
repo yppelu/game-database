@@ -1,3 +1,72 @@
+@use "@/scss-global/variables.scss";
+@use "@/scss-global/mixins.scss";
+
+$description-width: 50ch;
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+
+  margin-top: 1rem;
+  min-height: calc(100vh - 2rem - variables.$header-height);
+}
+
+.description-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.description {
+  background-color: variables.$background-secondary-color;
+  border-radius: variables.$border-radius;
+
+  padding: 1rem;
+  max-width: $description-width;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.link-inside-text {
+  text-decoration: underline;
+}
+
+.link-inside-text:focus-visible {
+  @include mixins.plain-link-focus;
+}
+
+.source-links-wrapper {
+  background-color: variables.$background-secondary-color;
+  border-radius: variables.$border-radius;
+
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  padding: 1rem;
+  max-width: $description-width;
+}
+
+.source-link {
+  @include mixins.white-link;
+
+  padding: 0.25rem 0.5rem;
+
+  &-icon {
+    height: 1.5rem;
+  }
+}
+
+.source-link:focus-visible {
+  @include mixins.white-link-focus;
+}
+
 .background-video {
   filter: opacity(0.5);
   object-fit: cover;
@@ -8,4 +77,14 @@
 
   min-height: 100vh;
   min-width: 100vw;
+}
+
+@media (hover: hover) {
+  .link-inside-text:hover {
+    text-decoration: none;
+  }
+
+  .source-link:hover {
+    @include mixins.white-link-focus;
+  }
 }

@@ -1,5 +1,29 @@
+@use "@/scss-global/variables.scss";
+
 @mixin plain-link-focus {
   box-shadow: 0 0 0 2px #000000;
   outline: 2px solid #ffffff;
   outline-offset: 2px;
+}
+
+@mixin white-link {
+  background-color: #ffffff;
+  color: #000000;
+
+  transition:
+    transform variables.$transition-duration variables.$transition-type,
+    background-color variables.$transition-duration variables.$transition-type;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: none;
+  border-radius: variables.$border-radius;
+}
+
+@mixin white-link-focus {
+  background-color: #6abebb;
+  outline: none;
+  transform: scale(1.05);
 }

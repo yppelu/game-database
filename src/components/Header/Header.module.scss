@@ -1,7 +1,6 @@
 @use "@/scss-global/variables.scss";
 @use "@/scss-global/mixins.scss";
 
-$header-height: 3rem;
 $header-font-size: 1.5rem;
 
 @mixin search-input-in-work {
@@ -16,7 +15,7 @@ $header-font-size: 1.5rem;
   justify-content: space-between;
   gap: 1rem;
 
-  height: $header-height;
+  height: variables.$header-height;
 }
 
 .home-link {
@@ -56,7 +55,7 @@ $header-font-size: 1.5rem;
   border-radius: variables.$border-radius;
   padding: 0.25rem 0.75rem 0.25rem 0.75rem;
   height: $header-font-size * variables.$line-height;
-  min-width: calc(100% - 2 * $header-height);
+  min-width: calc(100% - 2 * variables.$header-height);
 }
 
 .search-input:focus {
