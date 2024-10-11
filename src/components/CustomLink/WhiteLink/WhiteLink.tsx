@@ -1,5 +1,5 @@
 import classes from "@/components/CustomLink/WhiteLink/WhiteLink.module.scss";
-import { WhiteLinkProps } from "../CustomLinkTypes";
+import { WhiteLinkProps } from "@/components/CustomLink/CustomLinkTypes";
 
 function WhiteLink({ href, isForeign, img, text }: WhiteLinkProps) {
   return (
