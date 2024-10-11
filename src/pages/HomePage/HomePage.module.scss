@@ -1,0 +1,11 @@
+.background-video {
+  filter: opacity(0.5);
+  object-fit: cover;
+
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  min-height: 100vh;
+  min-width: 100vw;
+}
