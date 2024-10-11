@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "@/components/App";
 import ErrorPage from "@/pages/ErrorPage/ErrorPage";

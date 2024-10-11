@@ -1,21 +1,41 @@
-@use "@/scss-global/mixins.scss";
+@use "@/scss-global/variables.scss";
+
+@mixin link-focus {
+  background-color: variables.$link-color;
+  box-shadow: none;
+  outline: none;
+  transform: scale(1.05);
+}
 
 .link {
-  @include mixins.white-link;
+  background-color: #ffffff;
+  color: #000000;
+
+  transition:
+    transform variables.$transition-duration variables.$transition-type,
+    background-color variables.$transition-duration variables.$transition-type;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  border: none;
+  border-radius: variables.$border-radius;
 
   padding: 0.4rem 0.7rem;
 
   &-icon {
     height: 1.5rem;
   }
-}
 
-.link:focus-visible {
-  @include mixins.white-link-focus;
+  &:focus-visible {
+    @include link-focus;
+  }
 }
 
 @media (hover: hover) {
   .link:hover {
-    @include mixins.white-link-focus;
+    @include link-focus;
   }
 }

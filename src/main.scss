@@ -11,11 +11,6 @@
   padding: 0;
 }
 
-body {
-  line-height: variables.$line-height;
-  -webkit-font-smoothing: antialiased;
-}
-
 table {
   border-collapse: collapse;
 }
@@ -57,6 +52,12 @@ h6 {
   overflow-wrap: break-word;
 }
 
+*:focus-visible {
+  box-shadow: 0 0 0 2px #000000;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
 body {
   background-color: variables.$background-primary-color;
   color: variables.$font-primary-color;
@@ -73,6 +74,7 @@ body {
     "Helvetica Neue",
     sans-serif;
   font-size: 1rem;
+  line-height: variables.$line-height;
 }
 
 #root {

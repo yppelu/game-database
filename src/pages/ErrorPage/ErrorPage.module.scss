@@ -1,5 +1,4 @@
 @use "@/scss-global/variables.scss";
-@use "@/scss-global/mixins.scss";
 
 .background-image {
   background-image: url("/images/error-page-background-image-mobile.jpg");
@@ -49,10 +48,6 @@
   padding-bottom: 0.75rem;
   padding-top: 0.75rem;
   width: 100%;
-}
-
-.link:focus-visible {
-  @include mixins.plain-link-focus;
 }
 
 @media (min-width: variables.$break-point-mobile) {

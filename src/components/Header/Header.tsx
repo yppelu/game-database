@@ -8,8 +8,12 @@ function Header() {
   return (
     <header className={classes.header}>
       <Link className={classes["home-link"]} to="/">
-        <img className={classes.logo} src="/images/logo.svg" alt="Home page" />
-        <span className={classes["home-link-text"]} aria-hidden>
+        <img
+          className={classes["home-link__logo"]}
+          src="/images/logo.svg"
+          alt="Home page"
+        />
+        <span className={classes["home-link__text"]} aria-hidden>
           Game Database
         </span>
       </Link>

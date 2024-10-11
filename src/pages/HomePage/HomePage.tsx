@@ -1,6 +1,6 @@
+import classes from "@/pages/HomePage/HomePage.module.scss";
 import CustomLink from "@/components/CustomLink/CustomLink";
 import { CustomLinkProps } from "@/components/CustomLink/CustomLinkTypes";
-import classes from "@/pages/HomePage/HomePage.module.scss";
 
 const navItems: CustomLinkProps[] = [
   {
@@ -79,7 +79,7 @@ function HomePage() {
                 isForeign={true}
                 text="The Odin Project"
               />{" "}
-              assignments. Although the first project resembles a e-commerce
+              assignments. Although the original project resembles a e-commerce
               website, this one lacks such functionality, because my intentions
               now are but to practise some new tools.
             </p>
@@ -108,8 +108,8 @@ function HomePage() {
           </div>
         </div>
         <nav className={classes.nav}>
-          <h2 className={classes["nav-title"]}>Quick Navigation</h2>
-          <ul className={classes["nav-list"]}>
+          <h2 className={classes.nav__title}>Quick Navigation</h2>
+          <ul className={classes.nav__list}>
             {navItems.map((item) => (
               <li key={item.text}>
                 <CustomLink {...item} />

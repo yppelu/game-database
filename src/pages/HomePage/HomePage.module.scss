@@ -1,5 +1,4 @@
 @use "@/scss-global/variables.scss";
-@use "@/scss-global/mixins.scss";
 
 $description-width: 50ch;
 $blocks-padding: 1rem;
@@ -13,7 +12,7 @@ $blocks-padding: 1rem;
 
   margin-top: 1rem;
   min-height: calc(100vh - 2rem - variables.$header-height);
-  padding-bottom: 1rem;
+  padding-bottom: $blocks-padding;
 }
 
 .description-wrapper {
@@ -57,17 +56,17 @@ $blocks-padding: 1rem;
 
   border-radius: variables.$border-radius;
   padding: $blocks-padding;
-}
 
-.nav-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 
-.nav-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .background-video {

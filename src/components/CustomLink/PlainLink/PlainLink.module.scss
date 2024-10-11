@@ -1,13 +1,8 @@
-@use "@/scss-global/mixins.scss";
 @use "@/scss-global/variables.scss";
 
 .link {
   color: variables.$link-color;
   text-decoration: underline;
-}
-
-.link:focus-visible {
-  @include mixins.plain-link-focus;
 }
 
 @media (hover: hover) {
