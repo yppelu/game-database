@@ -24,7 +24,7 @@
 }
 
 @mixin white-link-focus {
-  background-color: #6abebb;
+  background-color: variables.$link-color;
   outline: none;
   transform: scale(1.05);
 }

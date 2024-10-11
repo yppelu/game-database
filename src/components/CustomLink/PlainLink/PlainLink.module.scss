@@ -1,6 +1,8 @@
 @use "@/scss-global/mixins.scss";
+@use "@/scss-global/variables.scss";
 
 .link {
+  color: variables.$link-color;
   text-decoration: underline;
 }
 
