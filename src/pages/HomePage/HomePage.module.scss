@@ -2,6 +2,7 @@
 @use "@/scss-global/mixins.scss";
 
 $description-width: 50ch;
+$blocks-padding: 1rem;
 
 .main {
   display: flex;
@@ -25,7 +26,7 @@ $description-width: 50ch;
   background-color: variables.$background-secondary-color;
   border-radius: variables.$border-radius;
 
-  padding: 1rem;
+  padding: $blocks-padding;
   max-width: $description-width;
 }
 
@@ -42,12 +43,34 @@ $description-width: 50ch;
   gap: 1rem;
   justify-content: center;
 
-  padding: 1rem;
+  padding: $blocks-padding;
   max-width: $description-width;
 }
 
+.nav {
+  background-color: variables.$background-secondary-color;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+
+  border-radius: variables.$border-radius;
+  padding: $blocks-padding;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .background-video {
-  filter: opacity(0.5);
   object-fit: cover;
 
   position: fixed;

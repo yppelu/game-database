@@ -1,5 +1,59 @@
 import CustomLink from "@/components/CustomLink/CustomLink";
+import { CustomLinkProps } from "@/components/CustomLink/CustomLinkTypes";
 import classes from "@/pages/HomePage/HomePage.module.scss";
+
+const navItems: CustomLinkProps[] = [
+  {
+    linkType: "white-link",
+    href: "#",
+    text: "All Games",
+    isForeign: false,
+    img: {
+      alt: "all games",
+      src: "/images/view-list.svg"
+    }
+  },
+  {
+    linkType: "white-link",
+    href: "#",
+    text: "Last 30 Days",
+    isForeign: false,
+    img: {
+      alt: "last 30 days",
+      src: "/images/star.svg"
+    }
+  },
+  {
+    linkType: "white-link",
+    href: "#",
+    text: "Popular in 2023",
+    isForeign: false,
+    img: {
+      alt: "popular in 2023",
+      src: "/images/pedestal.svg"
+    }
+  },
+  {
+    linkType: "white-link",
+    href: "#",
+    text: "Best of the Year",
+    isForeign: false,
+    img: {
+      alt: "best of the year",
+      src: "/images/cup.svg"
+    }
+  },
+  {
+    linkType: "white-link",
+    href: "#",
+    text: "All Time Top",
+    isForeign: false,
+    img: {
+      alt: "all time top",
+      src: "/images/crown.svg"
+    }
+  }
+];
 
 function HomePage() {
   return (
@@ -45,6 +99,16 @@ function HomePage() {
             />
           </div>
         </div>
+        <nav className={classes.nav}>
+          <h2 className={classes["nav-title"]}>Quick Navigation</h2>
+          <ul className={classes["nav-list"]}>
+            {navItems.map((item) => (
+              <li key={item.text}>
+                <CustomLink {...item} />
+              </li>
+            ))}
+          </ul>
+        </nav>
       </main>
       <video
         className={classes["background-video"]}
