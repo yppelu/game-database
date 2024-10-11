@@ -1,0 +1,80 @@
+@use "@/scss-global/variables.scss";
+
+$header-height: 3rem;
+$header-font-size: 1.5rem;
+
+@mixin search-input-in-work {
+  background-color: #ffffff;
+  color: #000000;
+  outline: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  height: $header-height;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  height: 100%;
+}
+
+.logo {
+  height: 100%;
+}
+
+.home-link-text {
+  font-size: $header-font-size;
+  font-weight: 700;
+
+  display: none;
+}
+
+.search-input {
+  appearance: none;
+  background-color: variables.$background-secondary-color;
+  color: variables.$font-secondary-color;
+
+  transition:
+    background-color variables.$transition-duration variables.$transition-type,
+    color variables.$transition-duration variables.$transition-type;
+
+  border: none;
+  border-radius: variables.$border-radius;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+  height: $header-font-size * variables.$line-height;
+  min-width: calc(100% - 2 * $header-height);
+}
+
+.search-input:focus {
+  @include search-input-in-work;
+}
+
+@media (min-width: variables.$break-point-mobile) {
+  .home-link-text {
+    display: inline-block;
+  }
+
+  .search-input {
+    min-width: 50%;
+  }
+}
+
+@media (hover: hover) {
+  .home-link:hover {
+    transform: scale(1.03);
+    transition: transform variables.$transition-duration
+      variables.$transition-type;
+  }
+
+  .search-input:hover {
+    @include search-input-in-work;
+  }
+}

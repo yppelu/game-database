@@ -1,3 +1,5 @@
+@use "@/scss-global/variables.scss";
+
 .background-image {
   background-image: url("/images/error-page-background-image-mobile.jpg");
   background-position: bottom left;
@@ -42,13 +44,13 @@
   justify-content: center;
 
   border: none;
-  border-radius: 0.25rem;
+  border-radius: variables.$border-radius;
   padding-bottom: 0.75rem;
   padding-top: 0.75rem;
   width: 100%;
 }
 
-@media (min-width: 601px) {
+@media (min-width: variables.$break-point-mobile) {
   .background-image {
     background-image: url("/images/error-page-background-image-desktop.jpg");
   }
@@ -62,6 +64,7 @@
 @media (hover: hover) {
   .link:hover {
     background-color: #cfcfcf;
-    transition: background-color 0.15s ease-in-out;
+    transition: background-color variables.$transition-duration
+      variables.$transition-type;
   }
 }

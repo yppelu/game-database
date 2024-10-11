@@ -12,7 +12,7 @@
 }
 
 body {
-  line-height: 1.5;
+  line-height: variables.$line-height;
   -webkit-font-smoothing: antialiased;
 }
 

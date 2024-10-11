@@ -1,8 +1,9 @@
-import classes from "@/pages/ErrorPage/ErrorPage.module.css";
+import classes from "@/pages/ErrorPage/ErrorPage.module.scss";
 import { Link } from "react-router-dom";
 
 function ErrorPage() {
   document.title = "404 | Game Database";
+
   return (
     <>
       <main className={classes.main}>
