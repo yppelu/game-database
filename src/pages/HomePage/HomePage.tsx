@@ -63,17 +63,23 @@ function HomePage() {
           <div className={classes.description}>
             <h1 className={classes.title}>Game Database</h1>
             <p>
-              It is not a commercial project, but a solution to one of{" "}
+              It is a remake of my{" "}
+              <CustomLink
+                linkType="plain-link"
+                href="https://yppelu-odin-shopping-cart.netlify.app/"
+                isForeign={true}
+                text="Shopping Cart"
+              />{" "}
+              project, which is a solution to one of{" "}
               <CustomLink
                 linkType="plain-link"
                 href="https://www.theodinproject.com/"
                 isForeign={true}
                 text="The Odin Project"
               />{" "}
-              assignments. You cannot buy any games here and all of the prices
-              are generated to imitate a real game shop.
-              <br />
-              But feel free to poke around, there are plenty of things.
+              assignments. Although the first project resembles a e-commerce
+              website, this one lacks such functionality, because my intentions
+              now are but to practise some new tools.
             </p>
           </div>
           <div className={classes["source-links-wrapper"]}>
