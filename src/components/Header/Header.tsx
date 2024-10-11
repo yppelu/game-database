@@ -9,7 +9,7 @@ function Header() {
     <header className={classes.header}>
       <Link className={classes["home-link"]} to="/">
         <img className={classes.logo} src="/images/logo.svg" alt="Home page" />
-        <span className={classes["home-link-text"]} aria-hidden="true">
+        <span className={classes["home-link-text"]} aria-hidden>
           Game Database
         </span>
       </Link>

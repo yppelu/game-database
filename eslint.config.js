@@ -53,8 +53,7 @@ export default tseslint.config(
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true }
-      ],
-      "sort-keys": "warn"
+      ]
     },
     settings: { react: { version: "18.3" } }
   }

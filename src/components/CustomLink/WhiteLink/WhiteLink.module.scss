@@ -1,0 +1,21 @@
+@use "@/scss-global/mixins.scss";
+
+.link {
+  @include mixins.white-link;
+
+  padding: 0.25rem 0.5rem;
+
+  &-icon {
+    height: 1.5rem;
+  }
+}
+
+.link:focus-visible {
+  @include mixins.white-link-focus;
+}
+
+@media (hover: hover) {
+  .link:hover {
+    @include mixins.white-link-focus;
+  }
+}

@@ -1,0 +1,15 @@
+@use "@/scss-global/mixins.scss";
+
+.link {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  @include mixins.plain-link-focus;
+}
+
+@media (hover: hover) {
+  .link:hover {
+    text-decoration: none;
+  }
+}
