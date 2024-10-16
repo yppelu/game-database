@@ -17,16 +17,21 @@ function Header() {
           Game Database
         </span>
       </Link>
-      <input
-        className={classes["search-input"]}
-        type="search"
-        name="search"
-        placeholder="Search games..."
-        value={searchInput}
-        onChange={(e) => {
-          setSearchInput(e.target.value);
-        }}
-      />
+      <form
+        className={classes["search-form"]}
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <input
+          className={classes["search-input"]}
+          type="search"
+          name="search"
+          placeholder="Search games..."
+          value={searchInput}
+          onChange={(e) => {
+            setSearchInput(e.target.value);
+          }}
+        />
+      </form>
     </header>
   );
 }

@@ -26,6 +26,7 @@ $header-font-size: 1.5rem;
 
   border-radius: variables.$border-radius;
   height: 100%;
+  min-width: max-content;
 
   &__logo {
     height: 100%;
@@ -37,6 +38,11 @@ $header-font-size: 1.5rem;
 
     display: none;
   }
+}
+
+.search-form {
+  height: $header-font-size * variables.$line-height;
+  width: 100%;
 }
 
 .search-input {
@@ -55,8 +61,8 @@ $header-font-size: 1.5rem;
   border: none;
   border-radius: variables.$border-radius;
   padding: 0.25rem 0.75rem 0.25rem $header-font-size * variables.$line-height;
-  height: $header-font-size * variables.$line-height;
-  min-width: calc(100% - 2 * variables.$header-height);
+  height: 100%;
+  width: 100%;
 
   &:focus {
     @include search-input-focus-hover;
@@ -68,8 +74,8 @@ $header-font-size: 1.5rem;
     display: inline-block;
   }
 
-  .search-input {
-    min-width: 50%;
+  .search-form {
+    width: 50%;
   }
 }
 
