@@ -1,10 +1,8 @@
 import classes from "@/components/Header/Header.module.scss";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchForm from "@/components/SearchForm/SearchForm";
 
 function Header() {
-  const [searchInput, setSearchInput] = useState<string>("");
-
   return (
     <header className={classes.header}>
       <Link className={classes["home-link"]} to="/">
@@ -17,21 +15,7 @@ function Header() {
           Game Database
         </span>
       </Link>
-      <form
-        className={classes["search-form"]}
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <input
-          className={classes["search-input"]}
-          type="search"
-          name="search"
-          placeholder="Search games..."
-          value={searchInput}
-          onChange={(e) => {
-            setSearchInput(e.target.value);
-          }}
-        />
-      </form>
+      <SearchForm />
     </header>
   );
 }

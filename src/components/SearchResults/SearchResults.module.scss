@@ -1,0 +1,20 @@
+@use "@/scss-global/variables.scss";
+
+.search-results {
+  background-color: variables.$background-secondary-color;
+
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: variables.$header-height * variables.$line-height;
+
+  border-radius: variables.$border-radius;
+  padding: 1rem;
+}
+
+@media (min-width: variables.$break-point-mobile) {
+  .search-results {
+    position: static;
+    margin-top: 0.25rem;
+  }
+}
