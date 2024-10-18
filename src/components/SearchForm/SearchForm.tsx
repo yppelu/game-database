@@ -14,6 +14,7 @@ function SearchForm() {
   return (
     <form
       className={classes["search-form"]}
+      data-testid="search-form"
       onSubmit={(e) => e.preventDefault()}
     >
       <input
