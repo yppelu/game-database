@@ -46,8 +46,9 @@ describe("useDebounceValue", () => {
 
     act(() => rerender({ value: 2, skipTimeout: false }));
     act(() => rerender({ value: 3, skipTimeout: true }));
-    act(() => vi.runAllTimers());
+    expect(result.current).toEqual(3);
 
+    act(() => vi.runAllTimers());
     expect(result.current).toEqual(3);
   });
 });
