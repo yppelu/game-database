@@ -1,9 +1,13 @@
 import classes from "@/components/SearchResults/SearchResults.module.scss";
 
-function SearchResults(props: { query: string }) {
+interface SearchResultsProps {
+  query: string;
+}
+
+function SearchResults({ query }: SearchResultsProps) {
   return (
     <div className={classes["search-results"]}>
-      The search query is: {props.query}
+      The search query is: {query}
     </div>
   );
 }
