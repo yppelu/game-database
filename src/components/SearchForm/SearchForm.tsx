@@ -3,7 +3,7 @@ import { useState } from "react";
 import SearchResults from "@/components/SearchResults/SearchResults";
 import useDebounceValue from "@/hooks/useDebounceValue";
 
-function SearchForm() {
+const SearchForm = () => {
   const [searchInputValue, setSearchInputValue] = useState<string>("");
   const searchQuery = useDebounceValue<string>(
     searchInputValue,
@@ -27,6 +27,6 @@ function SearchForm() {
       {searchQuery && <SearchResults query={searchQuery} />}
     </form>
   );
-}
+};
 
 export default SearchForm;

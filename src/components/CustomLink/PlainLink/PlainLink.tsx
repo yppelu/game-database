@@ -1,7 +1,7 @@
 import classes from "@/components/CustomLink/PlainLink/PlainLink.module.scss";
-import { PlainLinkProps } from "@/components/CustomLink/CustomLinkTypes";
+import { PlainLinkProps } from "@/types";
 
-function PlainLink({ href, isForeign, text }: PlainLinkProps) {
+const PlainLink = ({ href, isForeign, text }: PlainLinkProps) => {
   return (
     <a
       className={classes.link}
@@ -12,6 +12,6 @@ function PlainLink({ href, isForeign, text }: PlainLinkProps) {
       {text}
     </a>
   );
-}
+};
 
 export default PlainLink;

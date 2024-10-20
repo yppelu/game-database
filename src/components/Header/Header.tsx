@@ -2,7 +2,7 @@ import classes from "@/components/Header/Header.module.scss";
 import { Link } from "react-router-dom";
 import SearchForm from "@/components/SearchForm/SearchForm";
 
-function Header() {
+const Header = () => {
   return (
     <header className={classes.header}>
       <Link className={classes["home-link"]} to="/">
@@ -18,6 +18,6 @@ function Header() {
       <SearchForm />
     </header>
   );
-}
+};
 
 export default Header;

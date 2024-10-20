@@ -1,7 +1,7 @@
 import classes from "@/components/CustomLink/WhiteLink/WhiteLink.module.scss";
-import { WhiteLinkProps } from "@/components/CustomLink/CustomLinkTypes";
+import { WhiteLinkProps } from "@/types";
 
-function WhiteLink({ href, isForeign, img, text }: WhiteLinkProps) {
+const WhiteLink = ({ href, isForeign, img, text }: WhiteLinkProps) => {
   return (
     <a
       className={classes.link}
@@ -20,6 +20,6 @@ function WhiteLink({ href, isForeign, img, text }: WhiteLinkProps) {
       {text}
     </a>
   );
-}
+};
 
 export default WhiteLink;

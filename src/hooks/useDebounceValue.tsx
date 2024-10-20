@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
+import { UseDebounceValueType } from "@/types";
 
-function useDebounceValue<T>(
-  value: T,
-  delay: number,
-  skipTimeout?: boolean
-): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+const useDebounceValue: UseDebounceValueType = (value, delay, skipTimeout) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -22,6 +19,6 @@ function useDebounceValue<T>(
   }, [delay, skipTimeout, value]);
 
   return debouncedValue;
-}
+};
 
 export default useDebounceValue;

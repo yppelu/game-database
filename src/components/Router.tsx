@@ -3,7 +3,7 @@ import App from "@/components/App";
 import ErrorPage from "@/pages/ErrorPage/ErrorPage";
 import HomePage from "@/pages/HomePage/HomePage";
 
-function Router() {
+const Router = () => {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -19,6 +19,6 @@ function Router() {
   ]);
 
   return <RouterProvider router={router} />;
-}
+};
 
 export default Router;

@@ -1,6 +1,6 @@
 import classes from "@/pages/HomePage/HomePage.module.scss";
+import { CustomLinkProps } from "@/types";
 import CustomLink from "@/components/CustomLink/CustomLink";
-import { CustomLinkProps } from "@/components/CustomLink/CustomLinkTypes";
 
 const navItems: CustomLinkProps[] = [
   {
@@ -55,7 +55,7 @@ const navItems: CustomLinkProps[] = [
   }
 ];
 
-function HomePage() {
+const HomePage = () => {
   document.title = "Home | Game Database";
 
   return (
@@ -129,6 +129,6 @@ function HomePage() {
       </video>
     </>
   );
-}
+};
 
 export default HomePage;

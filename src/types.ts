@@ -1,7 +1,4 @@
-interface LinkImageParams {
-  src: string;
-  alt: string;
-}
+/* Links */
 
 interface LinkBaseProps {
   href: string;
@@ -15,6 +12,11 @@ interface PlainLinkProps extends LinkBaseProps {
 
 interface WhiteLinkBaseProps extends LinkBaseProps {
   linkType: "white-link";
+}
+
+interface LinkImageParams {
+  src: string;
+  alt: string;
 }
 
 interface WhiteLinkWithImageProps extends WhiteLinkBaseProps {
@@ -31,3 +33,17 @@ type WhiteLinkProps = WhiteLinkWithImageProps | WhiteLinkWithoutImageProps;
 type CustomLinkProps = PlainLinkProps | WhiteLinkProps;
 
 export type { CustomLinkProps, PlainLinkProps, WhiteLinkProps };
+
+/* SearchResults  */
+
+export interface SearchResultsProps {
+  query: string;
+}
+
+/* useDebounceValue */
+
+export type UseDebounceValueType = <T>(
+  value: T,
+  delay: number,
+  skipTimeout?: boolean
+) => T;

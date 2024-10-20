@@ -1,7 +1,7 @@
 import classes from "@/pages/ErrorPage/ErrorPage.module.scss";
 import { Link } from "react-router-dom";
 
-function ErrorPage() {
+const ErrorPage = () => {
   document.title = "404 | Game Database";
 
   return (
@@ -20,6 +20,6 @@ function ErrorPage() {
       <div className={classes["background-image"]}></div>
     </>
   );
-}
+};
 
 export default ErrorPage;
