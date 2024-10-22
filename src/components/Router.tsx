@@ -13,6 +13,10 @@ const Router = () => {
         {
           index: true,
           element: <HomePage />
+        },
+        {
+          path: "/games/game/:gameId",
+          element: <h1>This is going to be a game page.</h1>
         }
       ]
     }

@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from "@testing-library/react";
-import { APIResponseListOfGames, UseFetchGamesType } from "@/types";
+import { APIResponseListOfGames, GamePreviewData } from "@/types";
 import useFetchGames from "@/hooks/useFetchGames";
 
 describe("useFetchGames", () => {
@@ -43,7 +43,7 @@ describe("useFetchGames", () => {
           id: 1,
           name: "Game 1",
           background_image: "image1.jpg",
-          parent_platforms: [{ platform: { name: "PC" } }]
+          parent_platforms: [{ platform: { id: 1, name: "PC" } }]
         }
       ]
     };
@@ -56,12 +56,12 @@ describe("useFetchGames", () => {
     const { result } = renderHook(() => useFetchGames());
 
     waitFor(() => {
-      const mockReturnGames: ReturnType<UseFetchGamesType>["games"] = [
+      const mockReturnGames: GamePreviewData[] = [
         {
           id: 1,
           name: "Game 1",
           backgroundImage: "image1.jpg",
-          platforms: ["PC"]
+          platforms: [{ id: 1, name: "PC" }]
         }
       ];
 

@@ -3,6 +3,10 @@
 .search-results {
   background-color: variables.$background-secondary-color;
 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
   position: absolute;
   left: 1rem;
   right: 1rem;
@@ -10,11 +14,22 @@
 
   border-radius: variables.$border-radius;
   padding: 1rem;
+  max-height: calc(
+    100vh - variables.$header-height * variables.$line-height -
+      variables.$root-padding
+  );
+  overflow-y: auto;
+
+  & > div {
+    max-height: 6rem;
+    min-height: 6rem;
+  }
 }
 
 @media (min-width: variables.$break-point-mobile) {
   .search-results {
-    position: static;
-    margin-top: 0.25rem;
+    left: 0;
+    right: 0;
+    top: variables.$header-height;
   }
 }

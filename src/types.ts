@@ -1,15 +1,9 @@
 /* API Response Data */
-interface APIResponsePlatform {
-  platform: {
-    name: string;
-  };
-}
-
 interface APIResponseListOfGamesResult {
   id: number;
   name: string;
-  background_image: string;
-  parent_platforms: APIResponsePlatform[];
+  background_image?: string;
+  parent_platforms?: { platform: Platform }[];
 }
 
 export interface APIResponseListOfGames {
@@ -22,7 +16,7 @@ export interface APIResponseGameDetails {
   name: string;
   description: string;
   background_image: string;
-  parent_platforms: APIResponsePlatform[];
+  parent_platforms?: { platform: Platform }[];
   genres: { name: string }[];
   developers: { name: string }[];
   publishers: { name: string }[];
@@ -64,6 +58,17 @@ interface FetchRequestParams {
 export type assembleFetchURLType = (
   param: number | FetchRequestParams
 ) => string;
+
+/* Errors */
+
+export type ErrorMessage = "Found nothing" | "Internal error";
+
+/* Game Preview Card */
+
+export interface GamePreviewCardProps {
+  type: "search" | "page";
+  game: GamePreviewData;
+}
 
 /* Links */
 
@@ -117,15 +122,24 @@ export type UseDebounceValueType = <T>(
 
 /* useFetchGames */
 
-interface GamePreviewData {
+export interface Platform {
+  id: number;
+  name: string;
+}
+
+export interface PlatformSrcs {
+  [index: Platform["id"]]: string;
+}
+
+export interface GamePreviewData {
   id: number;
   name: string;
   backgroundImage: string;
-  platforms: string[];
+  platforms: Platform[];
 }
 
 export type UseFetchGamesType = (props?: FetchRequestParams) => {
-  error: string | null;
+  error: ErrorMessage | null;
   isLoading: boolean;
   games: GamePreviewData[];
 };

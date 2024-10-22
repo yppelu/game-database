@@ -1,0 +1,81 @@
+@use "@/scss-global/variables.scss";
+
+.card {
+  display: flex;
+  gap: 1rem;
+
+  overflow: hidden;
+  width: 100%;
+
+  & .image {
+    object-fit: cover;
+    border-radius: variables.$border-radius;
+  }
+
+  & .description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  & .title {
+    font-weight: 700;
+  }
+
+  & .platforms {
+    display: flex;
+    max-height: 1rem;
+
+    & > .platform {
+      height: 100%;
+    }
+  }
+
+  &.search {
+    & .image {
+      width: 30%;
+    }
+
+    & .description {
+      width: calc(70% - 0.5rem);
+    }
+
+    &.skeleton {
+      & .title {
+        height: calc(1rem * variables.$line-height);
+        width: 90%;
+      }
+
+      & .platforms {
+        height: calc(1rem * variables.$line-height);
+        width: 50%;
+      }
+
+      & .image,
+      & .title,
+      & .platforms {
+        background: linear-gradient(
+          90deg,
+          variables.$font-primary-color,
+          variables.$font-secondary-color
+        );
+        background-size: 200%;
+        opacity: 0.25;
+
+        animation: skeleton-background 2s infinite reverse;
+
+        border-radius: variables.$border-radius;
+      }
+    }
+  }
+}
+
+@keyframes skeleton-background {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}

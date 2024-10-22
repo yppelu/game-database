@@ -3,7 +3,7 @@ import { assembleFetchURLType } from "@/types";
 const BASE_URL = "https://api.rawg.io/api/games";
 
 const assembleFetchURL: assembleFetchURLType = (param) => {
-  const apiKeyPart = `?key=${import.meta.env.API_KEY}`;
+  const apiKeyPart = `?key=${import.meta.env.VITE_API_KEY}`;
   let url = BASE_URL;
 
   if (typeof param === "number") {

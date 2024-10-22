@@ -41,6 +41,7 @@
 @media (min-width: variables.$break-point-mobile) {
   .search-form {
     width: 50%;
+    position: relative;
   }
 }
 

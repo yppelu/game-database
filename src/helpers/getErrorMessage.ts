@@ -1,9 +1,11 @@
-const getErrorMessage = (error: unknown) => {
+import { ErrorMessage } from "@/types";
+
+const getErrorMessage = (error: unknown): ErrorMessage => {
   if (error instanceof Error) {
-    return error.message;
-  } else {
-    return "Internal error";
+    if (error.message === "Found nothing") return error.message;
   }
+
+  return "Internal error";
 };
 
 export default getErrorMessage;
