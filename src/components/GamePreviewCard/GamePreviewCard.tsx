@@ -30,6 +30,7 @@ const GamePreviewCard = ({ type, game }: GamePreviewCardProps) => {
         className={classes.image}
         src={game.backgroundImage}
         alt={`${game.name} preview`}
+        aria-hidden
       />
       <div className={classes.description}>
         <Link className={classes.title} to={`/games/game/${game.id}`}>

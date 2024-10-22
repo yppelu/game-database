@@ -1,0 +1,23 @@
+@use "@/scss-global/variables.scss";
+
+@mixin skeleton-loader-background() {
+  background: linear-gradient(
+    90deg,
+    variables.$font-primary-color,
+    variables.$font-secondary-color
+  );
+  background-size: 200%;
+  opacity: 0.25;
+
+  animation: skeleton-loader-shine 2s infinite reverse;
+}
+
+@keyframes skeleton-loader-shine {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}

@@ -30,6 +30,6 @@
   .search-results {
     left: 0;
     right: 0;
-    top: variables.$header-height;
+    top: calc(variables.$header-height - variables.$root-padding + 0.5rem);
   }
 }

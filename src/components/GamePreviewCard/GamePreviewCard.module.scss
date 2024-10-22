@@ -1,11 +1,10 @@
 @use "@/scss-global/variables.scss";
+@use "@/scss-global/mixins.scss";
 
 .card {
   display: flex;
   gap: 1rem;
-
   overflow: hidden;
-  width: 100%;
 
   & .image {
     object-fit: cover;
@@ -20,6 +19,7 @@
 
   & .title {
     font-weight: 700;
+    width: max-content;
   }
 
   & .platforms {
@@ -42,40 +42,24 @@
 
     &.skeleton {
       & .title {
-        height: calc(1rem * variables.$line-height);
         width: 90%;
       }
 
       & .platforms {
-        height: calc(1rem * variables.$line-height);
         width: 50%;
+      }
+
+      & .title,
+      & .platforms {
+        border-radius: variables.$border-radius;
+        height: calc(1rem * variables.$line-height);
       }
 
       & .image,
       & .title,
       & .platforms {
-        background: linear-gradient(
-          90deg,
-          variables.$font-primary-color,
-          variables.$font-secondary-color
-        );
-        background-size: 200%;
-        opacity: 0.25;
-
-        animation: skeleton-background 2s infinite reverse;
-
-        border-radius: variables.$border-radius;
+        @include mixins.skeleton-loader-background();
       }
     }
-  }
-}
-
-@keyframes skeleton-background {
-  0% {
-    background-position: -100% 0;
-  }
-
-  100% {
-    background-position: 100% 0;
   }
 }

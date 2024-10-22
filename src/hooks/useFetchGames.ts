@@ -15,6 +15,7 @@ const useFetchGames: UseFetchGamesType = (options = {}) => {
 
   useEffect(() => {
     const fetchGames = async (url: string) => {
+      setError(null);
       setIsLoading(true);
 
       try {
@@ -39,9 +40,7 @@ const useFetchGames: UseFetchGamesType = (options = {}) => {
           }));
 
         setGames(receivedGames);
-        setError(null);
       } catch (error) {
-        console.log(error);
         setError(getErrorMessage(error));
       } finally {
         setIsLoading(false);
