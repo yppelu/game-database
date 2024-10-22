@@ -1,4 +1,5 @@
 @use "@/scss-global/variables.scss";
+@use "@/scss-global/mixins.scss";
 
 @mixin search-input-focus-hover {
   background-color: #ffffff;
@@ -22,13 +23,11 @@
   background-position: 0.5rem center;
   color: variables.$font-secondary-color;
 
-  transition:
-    background-color variables.$transition-duration variables.$transition-type,
-    color variables.$transition-duration variables.$transition-type;
+  @include mixins.transition(background-color, color);
 
   border: none;
   border-radius: variables.$border-radius;
-  padding: 0.25rem 0.75rem 0.25rem calc(1.5rem * 1.5);
+  @include mixins.padding(0.25rem, 0.75rem, 0.25rem, calc(1.5rem * 1.5));
 
   height: 100%;
   width: 100%;

@@ -1,4 +1,5 @@
 @use "@/scss-global/variables.scss";
+@use "@/scss-global/mixins.scss";
 
 *,
 *::before,
@@ -78,11 +79,8 @@ body {
 }
 
 #root {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
+  @include mixins.margin(null, auto, null, auto);
+  @include mixins.padding(1rem, 1rem, null, 1rem);
   max-width: 1200px;
   width: 100%;
 }

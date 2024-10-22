@@ -1,4 +1,5 @@
 @use "@/scss-global/variables.scss";
+@use "@/scss-global/mixins.scss";
 
 .background-image {
   background-image: url("/images/error-page-background-image-mobile.jpg");
@@ -17,8 +18,7 @@
   justify-content: center;
   gap: 3rem;
 
-  margin-left: auto;
-  margin-right: auto;
+  @include mixins.margin(null, auto, null, auto);
   min-height: calc(100vh - 2rem);
   width: fit-content;
 }
@@ -45,8 +45,7 @@
 
   border: none;
   border-radius: variables.$border-radius;
-  padding-bottom: 0.75rem;
-  padding-top: 0.75rem;
+  @include mixins.padding(0.75rem, null, 0.75rem, null);
   width: 100%;
 }
 
@@ -64,7 +63,6 @@
 @media (hover: hover) {
   .link:hover {
     background-color: #cfcfcf;
-    transition: background-color variables.$transition-duration
-      variables.$transition-type;
+    @include mixins.transition(background-color);
   }
 }

@@ -1,4 +1,5 @@
 @use "@/scss-global/variables.scss";
+@use "@/scss-global/mixins.scss";
 
 @mixin link-focus {
   background-color: variables.$link-color;
@@ -11,9 +12,7 @@
   background-color: #ffffff;
   color: #000000;
 
-  transition:
-    transform variables.$transition-duration variables.$transition-type,
-    background-color variables.$transition-duration variables.$transition-type;
+  @include mixins.transition(transform, background-color);
 
   display: flex;
   align-items: center;
@@ -23,7 +22,7 @@
   border: none;
   border-radius: variables.$border-radius;
 
-  padding: 0.4rem 0.7rem;
+  @include mixins.padding(0.4rem, 0.7rem, 0.4rem, 0.7rem);
 
   &-icon {
     height: 1.5rem;

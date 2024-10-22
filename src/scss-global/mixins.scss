@@ -1,5 +1,39 @@
 @use "@/scss-global/variables.scss";
 
+// Box
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+// Transitions
+
+@function combine-transition-properties($properties...) {
+  $combined: "";
+  @each $property in $properties {
+    $combined:
+      #{$combined},
+      $property 150ms ease-in-out;
+  }
+  @return $combined;
+}
+
+@mixin transition($properties...) {
+  transition: combine-transition-properties($properties...);
+}
+
+// Skeleton loader
+
 @mixin skeleton-loader-background() {
   background: linear-gradient(
     90deg,
