@@ -5,7 +5,7 @@ import CustomLink from "@/components/CustomLink/CustomLink";
 const navItems: CustomLinkProps[] = [
   {
     linkType: "white-link",
-    href: "#",
+    href: "/games",
     text: "All Games",
     isForeign: false,
     img: {
@@ -15,7 +15,7 @@ const navItems: CustomLinkProps[] = [
   },
   {
     linkType: "white-link",
-    href: "#",
+    href: "/games/last-30-days",
     text: "Last 30 Days",
     isForeign: false,
     img: {
@@ -25,7 +25,7 @@ const navItems: CustomLinkProps[] = [
   },
   {
     linkType: "white-link",
-    href: "#",
+    href: "/games/popular-in-2023",
     text: "Popular in 2023",
     isForeign: false,
     img: {
@@ -35,7 +35,7 @@ const navItems: CustomLinkProps[] = [
   },
   {
     linkType: "white-link",
-    href: "#",
+    href: "/games/best-of-the-year",
     text: "Best of the Year",
     isForeign: false,
     img: {
@@ -45,7 +45,7 @@ const navItems: CustomLinkProps[] = [
   },
   {
     linkType: "white-link",
-    href: "#",
+    href: "/games/all-time-top",
     text: "All Time Top",
     isForeign: false,
     img: {
