@@ -88,7 +88,6 @@ interface WhiteLinkBaseProps extends LinkBaseProps {
 
 interface LinkImageParams {
   src: string;
-  alt: string;
 }
 
 interface WhiteLinkWithImageProps extends WhiteLinkBaseProps {

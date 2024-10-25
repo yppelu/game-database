@@ -5,11 +5,11 @@ import SearchForm from "@/components/SearchForm/SearchForm";
 const Header = () => {
   return (
     <header className={classes.header}>
-      <Link className={classes["home-link"]} to="/">
+      <Link className={classes["home-link"]} to="/" aria-label="Home page">
         <img
           className={classes["home-link__logo"]}
           src="/images/logo.svg"
-          alt="Home page"
+          alt=""
         />
         <span className={classes["home-link__text"]} aria-hidden>
           Game Database

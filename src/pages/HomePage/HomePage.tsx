@@ -9,7 +9,6 @@ const navItems: CustomLinkProps[] = [
     text: "All Games",
     isForeign: false,
     img: {
-      alt: "all games",
       src: "/images/view-list.svg"
     }
   },
@@ -19,7 +18,6 @@ const navItems: CustomLinkProps[] = [
     text: "Last 30 Days",
     isForeign: false,
     img: {
-      alt: "last 30 days",
       src: "/images/star.svg"
     }
   },
@@ -29,7 +27,6 @@ const navItems: CustomLinkProps[] = [
     text: "Popular in 2023",
     isForeign: false,
     img: {
-      alt: "popular in 2023",
       src: "/images/pedestal.svg"
     }
   },
@@ -39,7 +36,6 @@ const navItems: CustomLinkProps[] = [
     text: "Best of the Year",
     isForeign: false,
     img: {
-      alt: "best of the year",
       src: "/images/cup.svg"
     }
   },
@@ -49,7 +45,6 @@ const navItems: CustomLinkProps[] = [
     text: "All Time Top",
     isForeign: false,
     img: {
-      alt: "all time top",
       src: "/images/crown.svg"
     }
   }
@@ -65,14 +60,14 @@ const HomePage = () => {
           <div className={classes.description}>
             <h1 className={classes.title}>Game Database</h1>
             <p>
-              It is a remake of my{" "}
+              It is a remake of{" "}
               <CustomLink
                 linkType="plain-link"
                 href="https://yppelu-odin-shopping-cart.netlify.app/"
                 isForeign={true}
-                text="Shopping Cart"
+                text="my Shopping Cart project"
               />{" "}
-              project, which is a solution to one of{" "}
+              which is a solution to one of{" "}
               <CustomLink
                 linkType="plain-link"
                 href="https://www.theodinproject.com/"
@@ -91,8 +86,7 @@ const HomePage = () => {
               isForeign={true}
               text="Project Repo"
               img={{
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-                alt: "github"
+                src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
               }}
             />
             <CustomLink
@@ -101,8 +95,7 @@ const HomePage = () => {
               isForeign={true}
               text="RAWG API"
               img={{
-                src: "https://rawg.io/assets/en/apple-icon-120x120.png?v=4",
-                alt: "rawg"
+                src: "https://rawg.io/assets/en/apple-icon-120x120.png?v=4"
               }}
             />
           </div>

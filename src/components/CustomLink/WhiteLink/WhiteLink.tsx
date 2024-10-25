@@ -9,14 +9,7 @@ const WhiteLink = ({ href, isForeign, img, text }: WhiteLinkProps) => {
       target={isForeign ? "_blank" : undefined}
       rel={isForeign ? "noopener noreferrer" : undefined}
     >
-      {img && (
-        <img
-          className={classes["link-icon"]}
-          src={img.src}
-          alt={img.alt}
-          aria-hidden={Boolean(text)}
-        />
-      )}
+      {img && <img className={classes["link-icon"]} src={img.src} alt="" />}
       {text}
     </a>
   );
