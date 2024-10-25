@@ -109,6 +109,7 @@ export type { CustomLinkProps, PlainLinkProps, WhiteLinkProps };
 /* SearchResults  */
 
 export interface SearchResultsProps {
+  isVisible: boolean;
   query: string;
 }
 

@@ -108,7 +108,7 @@ const HomePage = () => {
           </div>
         </div>
         <nav className={classes.nav}>
-          <h2 className={classes.nav__title}>Quick Navigation</h2>
+          <p className={classes.nav__title}>Quick Navigation</p>
           <ul className={classes.nav__list}>
             {navItems.map((item) => (
               <li key={item.text}>

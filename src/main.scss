@@ -76,6 +76,9 @@ body {
     sans-serif;
   font-size: 1rem;
   line-height: variables.$line-height;
+
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 #root {
@@ -83,4 +86,8 @@ body {
   @include mixins.padding(1rem, 1rem, null, 1rem);
   max-width: 1200px;
   width: 100%;
+}
+
+.hidden {
+  visibility: hidden;
 }

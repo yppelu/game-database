@@ -45,6 +45,7 @@ const GamePreviewCard = ({ type, game }: GamePreviewCardProps) => {
                 src={platformSrcs[platform.id]}
                 alt={platform.name}
                 title={platform.name}
+                aria-hidden
               />
             ) : null
           )}
