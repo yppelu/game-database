@@ -70,6 +70,10 @@ export interface GamePreviewCardProps {
   game: GamePreviewData;
 }
 
+/* getPlatformsWithUniqueLogos */
+
+export type GetPlatformsWithUniqueLogos = (platforms: Platform[]) => Platform[];
+
 /* Links */
 
 interface LinkBaseProps {
