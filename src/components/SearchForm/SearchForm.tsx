@@ -1,4 +1,4 @@
-import classes from "@/components/SearchForm/SearchForm.module.scss";
+import styles from "@/components/SearchForm/SearchForm.module.scss";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import SearchResults from "@/components/SearchResults/SearchResults";
 import useDebounceValue from "@/hooks/useDebounceValue";
@@ -62,15 +62,21 @@ const SearchForm = () => {
 
   return (
     <form
-      className={classes["search-form"]}
+      className={styles["search-form"]}
       onSubmit={(e) => e.preventDefault()}
       ref={formRef}
     >
+      <label
+        className={styles["search-input-label"]}
+        htmlFor={styles["search-input"]}
+      >
+        Search games
+      </label>
       <input
-        className={classes["search-input"]}
+        id={styles["search-input"]}
         type="search"
         name="search"
-        placeholder="Search games..."
+        placeholder="Enter game title..."
         value={searchInputValue}
         onChange={handleChangeSearchInput}
       />

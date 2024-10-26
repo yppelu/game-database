@@ -1,5 +1,5 @@
-@use "@/scss-global/variables.scss";
-@use "@/scss-global/mixins.scss";
+@use "@/scss-global/_mixins.scss";
+@use "@/scss-global/_variables.scss";
 
 @mixin link-focus {
   background-color: variables.$link-color;

@@ -1,15 +1,15 @@
-import classes from "@/components/CustomLink/WhiteLink/WhiteLink.module.scss";
+import styles from "@/components/CustomLink/WhiteLink/WhiteLink.module.scss";
 import { WhiteLinkProps } from "@/types";
 
 const WhiteLink = ({ href, isForeign, img, text }: WhiteLinkProps) => {
   return (
     <a
-      className={classes.link}
+      className={styles.link}
       href={href}
       target={isForeign ? "_blank" : undefined}
       rel={isForeign ? "noopener noreferrer" : undefined}
     >
-      {img && <img className={classes["link-icon"]} src={img.src} alt="" />}
+      {img && <img className={styles["link-icon"]} src={img.src} alt="" />}
       {text}
     </a>
   );

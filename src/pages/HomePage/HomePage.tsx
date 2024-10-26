@@ -1,4 +1,4 @@
-import classes from "@/pages/HomePage/HomePage.module.scss";
+import styles from "@/pages/HomePage/HomePage.module.scss";
 import { CustomLinkProps } from "@/types";
 import CustomLink from "@/components/CustomLink/CustomLink";
 
@@ -55,10 +55,10 @@ const HomePage = () => {
 
   return (
     <>
-      <main className={classes.main}>
-        <div className={classes["description-wrapper"]}>
-          <div className={classes.description}>
-            <h1 className={classes.title}>Game Database</h1>
+      <main className={styles.main}>
+        <section className={styles["description-wrapper"]}>
+          <div className={styles.description}>
+            <h1 className={styles.title}>Game Database</h1>
             <p>
               It is a remake of{" "}
               <CustomLink
@@ -74,12 +74,12 @@ const HomePage = () => {
                 isForeign={true}
                 text="The Odin Project"
               />{" "}
-              assignments. Although the original project resembles a e-commerce
+              assignments. Although the original project resembles an e-commerce
               website, this one lacks such functionality, because my intentions
               now are but to practise some new tools.
             </p>
           </div>
-          <div className={classes["source-links-wrapper"]}>
+          <div className={styles["source-links-wrapper"]}>
             <CustomLink
               linkType="white-link"
               href="https://github.com/yppelu/odin-shopping-cart"
@@ -99,10 +99,10 @@ const HomePage = () => {
               }}
             />
           </div>
-        </div>
-        <nav className={classes.nav}>
-          <p className={classes.nav__title}>Quick Navigation</p>
-          <ul className={classes.nav__list}>
+        </section>
+        <nav className={styles.nav}>
+          <h2 className={styles.nav__title}>Quick Navigation</h2>
+          <ul className={styles.nav__list}>
             {navItems.map((item) => (
               <li key={item.text}>
                 <CustomLink {...item} />
@@ -112,7 +112,7 @@ const HomePage = () => {
         </nav>
       </main>
       <video
-        className={classes["background-video"]}
+        className={styles["background-video"]}
         autoPlay
         muted
         loop

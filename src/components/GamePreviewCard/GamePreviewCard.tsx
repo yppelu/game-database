@@ -1,4 +1,4 @@
-import classes from "@/components/GamePreviewCard/GamePreviewCard.module.scss";
+import styles from "@/components/GamePreviewCard/GamePreviewCard.module.scss";
 import { Link } from "react-router-dom";
 import { GamePreviewCardProps, Platform } from "@/types";
 import { platformSrcs } from "@/helpers/consts";
@@ -24,32 +24,35 @@ const GamePreviewCard = ({ type, game }: GamePreviewCardProps) => {
 
   return (
     <div
-      className={`${classes.card} ${type === "search" ? classes.search : classes.page}`}
+      className={`${styles.card} ${type === "search" ? styles.search : styles.page}`}
     >
       <img
-        className={classes.image}
+        className={styles.image}
         src={game.backgroundImage}
         alt={`${game.name} preview`}
         aria-hidden
       />
-      <div className={classes.description}>
-        <Link className={classes.title} to={`/games/game/${game.id}`}>
-          {game.name}
-        </Link>
-        <div className={classes.platforms}>
+      <div className={styles.description}>
+        <h3 className={styles.title}>
+          <Link to={`/games/game/${game.id}`}>{game.name}</Link>
+        </h3>
+        <h4 className={styles["platforms-list-title"]}>Platforms</h4>
+        <ul className={styles.platforms}>
           {getPlatformsWithUniqueLogos(game.platforms).map((platform) =>
             platform.id in platformSrcs ? (
-              <img
-                key={platform.id}
-                className={classes.platform}
-                src={platformSrcs[platform.id]}
-                alt={platform.name}
-                title={platform.name}
-                aria-hidden
-              />
+              <li className={styles.platform} key={platform.id}>
+                <span className={styles["platform-name"]}>{platform.name}</span>
+                <img
+                  className={styles["platform-image"]}
+                  src={platformSrcs[platform.id]}
+                  alt={platform.name}
+                  title={platform.name}
+                  aria-hidden
+                />
+              </li>
             ) : null
           )}
-        </div>
+        </ul>
       </div>
     </div>
   );

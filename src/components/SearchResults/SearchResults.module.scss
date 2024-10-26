@@ -1,12 +1,13 @@
-@use "@/scss-global/variables.scss";
+@use "@/scss-global/_placeholders.scss";
+@use "@/scss-global/_variables.scss";
+
+.search-status-live-region {
+  @extend %visually-hidden;
+}
 
 .search-results {
   background-color: variables.$background-secondary-color;
   overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 
   position: absolute;
   left: 1rem;
@@ -17,9 +18,22 @@
   padding: 1rem;
   max-height: 75vh;
 
-  & > div {
-    max-height: 6rem;
-    min-height: 6rem;
+  & .title {
+    @extend %visually-hidden;
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & > li {
+      height: 6rem;
+    }
   }
 }
 

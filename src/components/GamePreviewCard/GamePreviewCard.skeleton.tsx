@@ -1,4 +1,4 @@
-import classes from "@/components/GamePreviewCard/GamePreviewCard.module.scss";
+import styles from "@/components/GamePreviewCard/GamePreviewCard.module.scss";
 import { GamePreviewCardProps } from "@/types";
 
 const GamePreviewCardSkeleton = ({
@@ -6,12 +6,12 @@ const GamePreviewCardSkeleton = ({
 }: Pick<GamePreviewCardProps, "type">) => {
   return (
     <div
-      className={`${classes.card} ${type === "search" ? classes.search : classes.page} ${classes.skeleton}`}
+      className={`${styles.card} ${type === "search" ? styles.search : styles.page} ${styles.skeleton}`}
     >
-      <div className={classes.image}></div>
-      <div className={classes.description}>
-        <div className={classes.title}></div>
-        <div className={classes.platforms}></div>
+      <div className={styles.image}></div>
+      <div className={styles.description}>
+        <div className={styles.title}></div>
+        <div className={styles.platforms}></div>
       </div>
     </div>
   );

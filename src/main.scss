@@ -1,5 +1,5 @@
-@use "@/scss-global/variables.scss";
-@use "@/scss-global/mixins.scss";
+@use "@/scss-global/_mixins.scss";
+@use "@/scss-global/_variables.scss";
 
 *,
 *::before,
@@ -86,8 +86,4 @@ body {
   @include mixins.padding(1rem, 1rem, null, 1rem);
   max-width: 1200px;
   width: 100%;
-}
-
-.hidden {
-  visibility: hidden;
 }
