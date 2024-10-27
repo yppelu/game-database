@@ -1,5 +1,6 @@
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SearchForm from "@/components/SearchForm/SearchForm";
 
 vi.mock("@/components/SearchResults/SearchResults", () => ({
@@ -18,7 +19,13 @@ describe("SearchForm", () => {
   it("should render SearchResults component only when search query is provided", async () => {
     const searchResultsComponent = () => screen.queryByText(/search results/i);
     const user = userEvent.setup();
-    render(<SearchForm />);
+    render(
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<SearchForm />}></Route>
+        </Routes>
+      </BrowserRouter>
+    );
 
     await user.click(screen.getByRole("searchbox"));
     await user.keyboard("Aa");
