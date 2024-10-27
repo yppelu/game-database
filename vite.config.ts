@@ -8,6 +8,7 @@ const root = path.resolve(__dirname, "src");
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/game-database",
   css: {
     preprocessorOptions: {
       scss: {

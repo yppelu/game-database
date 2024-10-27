@@ -2,7 +2,7 @@ import styles from "@/components/GamePreviewCard/GamePreviewCard.module.scss";
 import { Link } from "react-router-dom";
 import { GamePreviewCardProps } from "@/types";
 import getPlatformsWithUniqueLogos from "@/helpers/getPlatformsWithUniqueLogos";
-import { platformSrcs } from "@/helpers/consts";
+import { paths, platformSrcs } from "@/helpers/consts";
 
 const GamePreviewCard = ({ type, game }: GamePreviewCardProps) => {
   const platforms = getPlatformsWithUniqueLogos(game.platforms);
@@ -19,7 +19,7 @@ const GamePreviewCard = ({ type, game }: GamePreviewCardProps) => {
       />
       <div className={styles.description}>
         <h3 className={styles.title}>
-          <Link to={`/games/game/${game.id}`}>{game.name}</Link>
+          <Link to={`${paths.home}/games/game/${game.id}`}>{game.name}</Link>
         </h3>
         <h4 className={styles["platforms-list-title"]}>Platforms</h4>
         <ul className={styles.platforms}>

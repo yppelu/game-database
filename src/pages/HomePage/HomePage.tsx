@@ -1,51 +1,52 @@
 import styles from "@/pages/HomePage/HomePage.module.scss";
 import { CustomLinkProps } from "@/types";
 import CustomLink from "@/components/CustomLink/CustomLink";
+import { paths } from "@/helpers/consts";
 
 const navItems: CustomLinkProps[] = [
   {
     linkType: "white-link",
-    href: "/games",
+    href: `${paths.home}/games`,
     text: "All Games",
     isForeign: false,
     img: {
-      src: "/images/view-list.svg"
+      src: `${paths.images}/view-list.svg`
     }
   },
   {
     linkType: "white-link",
-    href: "/games/last-30-days",
+    href: `${paths.home}/games/last-30-days`,
     text: "Last 30 Days",
     isForeign: false,
     img: {
-      src: "/images/star.svg"
+      src: `${paths.images}/star.svg`
     }
   },
   {
     linkType: "white-link",
-    href: "/games/popular-in-2023",
+    href: `${paths.home}/games/popular-in-2023`,
     text: "Popular in 2023",
     isForeign: false,
     img: {
-      src: "/images/pedestal.svg"
+      src: `${paths.images}/pedestal.svg`
     }
   },
   {
     linkType: "white-link",
-    href: "/games/best-of-the-year",
+    href: `${paths.home}/games/best-of-the-year`,
     text: "Best of the Year",
     isForeign: false,
     img: {
-      src: "/images/cup.svg"
+      src: `${paths.images}/cup.svg`
     }
   },
   {
     linkType: "white-link",
-    href: "/games/all-time-top",
+    href: `${paths.home}/games/all-time-top`,
     text: "All Time Top",
     isForeign: false,
     img: {
-      src: "/images/crown.svg"
+      src: `${paths.images}/crown.svg`
     }
   }
 ];
@@ -118,7 +119,7 @@ const HomePage = () => {
         loop
         aria-hidden
       >
-        <source src="/videos/pyke.mp4" type="video/mp4" />
+        <source src={`${paths.videos}/pyke.mp4`} type="video/mp4" />
       </video>
     </>
   );
