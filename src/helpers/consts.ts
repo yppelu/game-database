@@ -20,5 +20,5 @@ export const platformSrcs: PlatformSrcs = {
   11: `${paths.images}/sega.svg`,
   12: `${paths.images}/playstation.svg`,
   13: `${paths.images}/playstation.svg`,
-  14: `${paths.images}/web.sv`
+  14: `${paths.images}/web.svg`
 };
