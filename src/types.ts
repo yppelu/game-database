@@ -132,7 +132,7 @@ export interface Platform {
 }
 
 export interface PlatformSrcs {
-  [index: Platform["id"]]: string;
+  [index: string]: string;
 }
 
 export interface GamePreviewData {
