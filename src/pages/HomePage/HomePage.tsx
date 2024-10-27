@@ -64,7 +64,7 @@ const HomePage = () => {
               It is a remake of{" "}
               <CustomLink
                 linkType="plain-link"
-                href="https://yppelu-odin-shopping-cart.netlify.app/"
+                href="https://github.com/yppelu/odin-shopping-cart"
                 isForeign={true}
                 text="my Shopping Cart project"
               />{" "}
@@ -83,7 +83,7 @@ const HomePage = () => {
           <div className={styles["source-links-wrapper"]}>
             <CustomLink
               linkType="white-link"
-              href="https://github.com/yppelu/odin-shopping-cart"
+              href="https://github.com/yppelu/game-database"
               isForeign={true}
               text="Project Repo"
               img={{
