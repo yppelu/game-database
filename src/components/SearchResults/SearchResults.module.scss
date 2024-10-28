@@ -1,6 +1,19 @@
 @use "@/scss-global/_placeholders.scss";
 @use "@/scss-global/_variables.scss";
 
+@function get-search-results-height(
+  $padding-top,
+  $padding-bottom,
+  $card-height,
+  $number-of-cards,
+  $gap
+) {
+  @return calc(
+    $padding-top + $padding-bottom + $card-height * $number-of-cards + $gap *
+      ($number-of-cards - 1)
+  );
+}
+
 .search-status-live-region {
   @extend %visually-hidden;
 }
@@ -16,7 +29,7 @@
 
   border-radius: variables.$border-radius;
   padding: 1rem;
-  max-height: 75vh;
+  max-height: get-search-results-height(1rem, 1rem, 6rem, 4, 1rem);
 
   & .title {
     @extend %visually-hidden;
@@ -42,9 +55,5 @@
     left: 0;
     right: 0;
     top: calc(variables.$header-height - 0.5rem);
-
-    max-height: calc(
-      100vh - variables.$header-height * variables.$line-height - 1rem
-    );
   }
 }
