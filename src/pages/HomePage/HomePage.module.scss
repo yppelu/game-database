@@ -10,8 +10,7 @@ $blocks-padding: 1rem;
   justify-content: space-around;
   gap: 1rem;
 
-  margin-top: 1rem;
-  min-height: calc(100vh - 2rem - variables.$header-height);
+  min-height: calc(100vh - 3rem - variables.$header-height);
   padding-bottom: $blocks-padding;
 }
 

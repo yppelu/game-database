@@ -14,9 +14,9 @@ export interface APIResponseListOfGames {
 export interface APIResponseGameDetails {
   id: number;
   name: string;
-  description: string;
+  description_raw: string;
   background_image: string | null;
-  parent_platforms?: { platform: Platform }[];
+  platforms?: { platform: Platform }[];
   genres: { name: string }[];
   developers: { name: string }[];
   publishers: { name: string }[];

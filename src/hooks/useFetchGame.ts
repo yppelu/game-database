@@ -26,11 +26,9 @@ const useFetchGame: UseFetchGameType = (id) => {
         const result: APIResponseGameDetails = await response.json();
         const receivedGame: GameData = {
           name: result.name,
-          description: result.description,
+          description: result.description_raw,
           backgroundImage: result.background_image ?? undefined,
-          platforms: result.parent_platforms?.map(
-            (platform) => platform.platform
-          ),
+          platforms: result.platforms?.map((platform) => platform.platform),
           genres: result.genres.map((genre) => genre.name),
           developers: result.developers.map((developer) => developer.name),
           publishers: result.publishers.map((publisher) => publisher.name),
@@ -41,6 +39,7 @@ const useFetchGame: UseFetchGameType = (id) => {
         setGame(receivedGame);
       } catch (error) {
         setError(getErrorMessage(error));
+        setGame(null);
       } finally {
         setIsLoading(false);
       }
@@ -48,7 +47,7 @@ const useFetchGame: UseFetchGameType = (id) => {
 
     const url = assembleFetchURL({ type: "game", id });
     fetchGame(url);
-  }, []);
+  }, [id]);
 
   return { error, isLoading, game };
 };

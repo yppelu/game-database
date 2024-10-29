@@ -36,9 +36,9 @@ describe("useFetchGame", () => {
     const mockResponse: APIResponseGameDetails = {
       id: 1,
       name: "Game 1",
-      description: "Description of game 1",
+      description_raw: "Description of game 1",
       background_image: "url",
-      parent_platforms: [
+      platforms: [
         { platform: { id: 1, name: "PC" } },
         { platform: { id: 2, name: "PlayStation" } }
       ],
