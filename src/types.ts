@@ -24,6 +24,11 @@ export interface APIResponseGameDetails {
   metacritic: number | null;
 }
 
+export interface APIResponseScreenshots {
+  count: number;
+  results: { image: string }[];
+}
+
 /* assembleFetchURL */
 
 interface DatesParams {
@@ -178,4 +183,12 @@ export type UseFetchGameType = (id: number) => {
   error: ErrorMessage | null;
   isLoading: boolean;
   game: GameData | null;
+};
+
+/* useFetchScreenshots */
+
+export type UseFetchScreenshotsType = (id: number) => {
+  isError: boolean;
+  isLoading: boolean;
+  screenshots: string[];
 };
