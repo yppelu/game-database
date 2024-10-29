@@ -15,7 +15,7 @@ export interface APIResponseGameDetails {
   id: number;
   name: string;
   description: string;
-  background_image: string;
+  background_image: string | null;
   parent_platforms?: { platform: Platform }[];
   genres: { name: string }[];
   developers: { name: string }[];
@@ -55,8 +55,20 @@ interface FetchRequestParams {
   page?: PageParams;
 }
 
+interface assembleFetchURLGameOrScreenshotProps {
+  type: "game" | "screenshots";
+  id: number;
+  options?: never;
+}
+
+interface assembleFetchURLGamesProps {
+  type: "games";
+  id?: never;
+  options: FetchRequestParams;
+}
+
 export type assembleFetchURLType = (
-  param: number | FetchRequestParams
+  props: assembleFetchURLGameOrScreenshotProps | assembleFetchURLGamesProps
 ) => string;
 
 /* Errors */
@@ -146,4 +158,24 @@ export type UseFetchGamesType = (props?: FetchRequestParams) => {
   error: ErrorMessage | null;
   isLoading: boolean;
   games: GamePreviewData[];
+};
+
+/* useFetchGame */
+
+export interface GameData {
+  name: string;
+  description: string;
+  backgroundImage?: string;
+  platforms?: Platform[];
+  genres: string[];
+  developers: string[];
+  publishers: string[];
+  released: string;
+  metacritic?: number;
+}
+
+export type UseFetchGameType = (id: number) => {
+  error: ErrorMessage | null;
+  isLoading: boolean;
+  game: GameData | null;
 };

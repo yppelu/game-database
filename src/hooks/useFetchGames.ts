@@ -47,7 +47,7 @@ const useFetchGames: UseFetchGamesType = (options = {}) => {
       }
     };
 
-    const url = assembleFetchURL(options);
+    const url = assembleFetchURL({ type: "games", options });
 
     fetchGames(url);
   }, [JSON.stringify(options)]);

@@ -2,33 +2,37 @@ import { assembleFetchURLType } from "@/types";
 
 const BASE_URL = "https://api.rawg.io/api/games";
 
-const assembleFetchURL: assembleFetchURLType = (param) => {
+const assembleFetchURL: assembleFetchURLType = ({ type, id, options = {} }) => {
   const apiKeyPart = `?key=${import.meta.env.VITE_API_KEY}`;
   let url = BASE_URL;
 
-  if (typeof param === "number") {
-    return `${url}/${param}${apiKeyPart}`;
+  if (type === "game") {
+    return `${url}/${id}${apiKeyPart}`;
+  }
+
+  if (type === "screenshots") {
+    return `${url}/${id}/screenshots${apiKeyPart}`;
   }
 
   url += apiKeyPart;
 
-  if (param.search) url += `&search=${param.search}`;
+  if (options.search) url += `&search=${options.search}`;
 
-  if (param.dates) {
-    url += `&dates=${param.dates.startDate}`;
-    if (param.dates.endDate) url += `,${param.dates.endDate}`;
+  if (options.dates) {
+    url += `&dates=${options.dates.startDate}`;
+    if (options.dates.endDate) url += `,${options.dates.endDate}`;
   }
 
-  if (param.ordering) {
-    const order = param.ordering.reversed
-      ? `-${param.ordering.type}`
-      : param.ordering.type;
+  if (options.ordering) {
+    const order = options.ordering.reversed
+      ? `-${options.ordering.type}`
+      : options.ordering.type;
     url += `&ordering=${order}`;
   }
 
-  if (param.page) {
-    if (param.page.number) url += `&page=${param.page.number}`;
-    if (param.page.size) url += `&page_size=${param.page.size}`;
+  if (options.page) {
+    if (options.page.number) url += `&page=${options.page.number}`;
+    if (options.page.size) url += `&page_size=${options.page.size}`;
   }
 
   return url;
