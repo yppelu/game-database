@@ -33,7 +33,7 @@ const useFetchScreenshots: UseFetchScreenshotsType = (id) => {
 
     const url = assembleFetchURL({ type: "screenshots", id });
     fetchScreenshots(url);
-  }, []);
+  }, [id]);
 
   return { isError, isLoading, screenshots };
 };

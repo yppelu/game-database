@@ -1,0 +1,49 @@
+@use "@/scss-global/_mixins.scss";
+@use "@/scss-global/_variables.scss";
+
+.carousel {
+  background-color: variables.$background-secondary-color;
+  border-radius: variables.$border-radius;
+  overflow: hidden;
+
+  &.skeleton {
+    @include mixins.skeleton-loader-background();
+
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+}
+
+.screenshots-list {
+  overflow-x: auto;
+  display: flex;
+
+  &-item {
+    flex-shrink: 0;
+
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+}
+
+.screenshot {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: variables.$break-point-mobile) {
+  .carousel {
+    &.skeleton {
+      aspect-ratio: unset;
+      height: calc(9 * 480px / 16);
+      width: 100%;
+    }
+  }
+
+  .screenshots-list {
+    &-item {
+      width: 480px;
+    }
+  }
+}

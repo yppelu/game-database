@@ -1,9 +1,22 @@
 import styles from "@/pages/GamePage/GamePage.module.scss";
+import { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { ErrorMessage } from "@/types";
 import useFetchGame from "@/hooks/useFetchGame";
-import GamePageSkeleton from "./GamePage.skeleton";
+import GamePageSkeleton from "@/pages/GamePage/GamePage.skeleton";
 import formatDate from "@/helpers/formatDate";
+import ImageCarouselSkeleton from "@/components/ImageCarousel/ImageCarousel.skeleton";
+
+const ImageCarouselLazy = lazy(
+  () => import("@/components/ImageCarousel/ImageCarousel")
+);
+const ImageCarousel = (id: number) => {
+  return (
+    <Suspense fallback={<ImageCarouselSkeleton />}>
+      <ImageCarouselLazy id={id} />
+    </Suspense>
+  );
+};
 
 const ErrorBlock = (error: ErrorMessage) => {
   return (
@@ -50,6 +63,7 @@ const GamePage = () => {
           <div className={styles["background-image-cover"]} aria-hidden></div>
           <main className={styles.main}>
             <h1 className={styles["game-title"]}>{game.name}</h1>
+            {ImageCarousel(Number(gameId))}
             <section>
               <h2 className={styles["section-title"]}>About</h2>
               <div className={styles["about-wrapper"]}>
