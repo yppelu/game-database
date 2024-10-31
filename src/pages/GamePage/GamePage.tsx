@@ -95,12 +95,14 @@ const GamePage = () => {
                     </h3>
                     <p>{game.developers.join(", ")}</p>
                   </section>
-                  <section>
-                    <h3 className={styles["additional-info-subtitle"]}>
-                      Publishers
-                    </h3>
-                    <p>{game.publishers.join(", ")}</p>
-                  </section>
+                  {game.publishers.length ? (
+                    <section>
+                      <h3 className={styles["additional-info-subtitle"]}>
+                        Publishers
+                      </h3>
+                      <p>{game.publishers.join(", ")}</p>
+                    </section>
+                  ) : null}
                   <section>
                     <h3 className={styles["additional-info-subtitle"]}>
                       Release date

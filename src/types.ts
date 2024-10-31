@@ -174,7 +174,7 @@ export interface GameData {
   platforms?: Platform[];
   genres: string[];
   developers: string[];
-  publishers: string[];
+  publishers: string[] | never[];
   released: string;
   metacritic?: number;
 }
