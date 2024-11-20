@@ -8,6 +8,7 @@
   overflow: hidden;
 
   height: 100%;
+  width: 100%;
 
   & .image {
     object-fit: cover;
@@ -20,7 +21,6 @@
     gap: 0.5rem;
 
     & .title {
-      font-size: 1rem;
       font-weight: 700;
       width: fit-content;
     }
@@ -54,6 +54,54 @@
 
     & .description {
       width: calc(70% - 0.5rem);
+
+      & .title {
+        font-size: 1rem;
+      }
+    }
+
+    &.skeleton {
+      & .image {
+        @include mixins.skeleton-loader-background();
+      }
+
+      & .description {
+        & .title {
+          width: 90%;
+        }
+
+        & .platforms {
+          width: 50%;
+        }
+
+        & .title,
+        & .platforms {
+          border-radius: variables.$border-radius;
+          height: calc(1rem * variables.$line-height);
+
+          @include mixins.skeleton-loader-background();
+        }
+      }
+    }
+  }
+
+  &.page {
+    background-color: variables.$background-secondary-color;
+    flex-direction: column;
+    border-radius: variables.$border-radius;
+
+    & .image {
+      height: 150px;
+      width: 100%;
+    }
+
+    & .description {
+      @include mixins.padding(0, 1rem, 1rem, 1rem);
+      width: 100%;
+
+      & .title {
+        font-size: 1.25rem;
+      }
     }
 
     &.skeleton {

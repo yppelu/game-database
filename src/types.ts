@@ -40,7 +40,7 @@ interface OrderingParams {
   type:
     | "added"
     | "created"
-    | "metacritic"
+    | "metascore"
     | "name"
     | "rating"
     | "released"
@@ -53,7 +53,7 @@ interface PageParams {
   size: number;
 }
 
-interface FetchRequestParams {
+export interface FetchRequestParams {
   search?: string;
   dates?: DatesParams;
   ordering?: OrderingParams;

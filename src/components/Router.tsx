@@ -6,6 +6,7 @@ const ErrorPage = lazy(() => import("@/pages/ErrorPage/ErrorPage"));
 import HomePage from "@/pages/HomePage/HomePage";
 const GamePage = lazy(() => import("@/pages/GamePage/GamePage"));
 import GamePageSkeleton from "@/pages/GamePage/GamePage.skeleton";
+import GamesPage from "@/pages/GamesPage/GamesPage";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const Router = () => {
         {
           index: true,
           element: <HomePage />
+        },
+        {
+          path: `${paths.home}/games/:sectionName?`,
+          element: <GamesPage />
         },
         {
           path: `${paths.home}/games/game/:gameId`,
